@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>793E3493-1EEA-431D-B539-6C8BF971DB70</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DiegoUnchained</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3FD27B8B-D66E-45CD-BBFB-52DEC9F66481</key>
+		<string>ssh://github.com/alonecuzzo/diego-unchained.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DiegoUnchained/DiegoUnchained.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3FD27B8B-D66E-45CD-BBFB-52DEC9F66481</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/alonecuzzo/diego-unchained.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3FD27B8B-D66E-45CD-BBFB-52DEC9F66481</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3FD27B8B-D66E-45CD-BBFB-52DEC9F66481</string>
+			<key>IDESourceControlWCCName</key>
+			<string>diego-unchained</string>
+		</dict>
+	</array>
+</dict>
+</plist>
