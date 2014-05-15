@@ -7,7 +7,7 @@
 //
 
 #import "DUViewController.h"
-#import "DUMyScene.h"
+#import "DUBaseLevelScene.h"
 
 @implementation DUViewController
 
@@ -21,7 +21,7 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [DUMyScene sceneWithSize:skView.bounds.size];
+    SKScene * scene = [DUBaseLevelScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
