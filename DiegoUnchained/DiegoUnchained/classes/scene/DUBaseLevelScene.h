@@ -17,6 +17,13 @@ typedef NS_ENUM(NSInteger, DUWorldLayer) {
 
 #import <SpriteKit/SpriteKit.h>
 
+#import "DUCharacterSprite.h"
+
 @interface DUBaseLevelScene : SKScene
+
+@property (nonatomic, copy, readonly) NSArray *layers;
+@property (nonatomic, strong, readonly) SKNode *world;
+
+- (void)addChild:(SKNode *)node atWorldLayer:(DUWorldLayer)layer;
 
 @end

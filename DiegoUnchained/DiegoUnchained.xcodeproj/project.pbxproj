@@ -13,18 +13,22 @@
 		0610E2AF1922A5C400A1E0FC /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0610E2AE1922A5C400A1E0FC /* SpriteKit.framework */; };
 		0610E2B51922A5C400A1E0FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0610E2B31922A5C400A1E0FC /* InfoPlist.strings */; };
 		0610E2B71922A5C400A1E0FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0610E2B61922A5C400A1E0FC /* main.m */; };
-		0610E2BB1922A5C400A1E0FC /* DUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0610E2BA1922A5C400A1E0FC /* DUAppDelegate.m */; };
 		0610E2BE1922A5C400A1E0FC /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0610E2BC1922A5C400A1E0FC /* Main_iPhone.storyboard */; };
 		0610E2C11922A5C400A1E0FC /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0610E2BF1922A5C400A1E0FC /* Main_iPad.storyboard */; };
-		0610E2C41922A5C400A1E0FC /* DUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0610E2C31922A5C400A1E0FC /* DUViewController.m */; };
-		0610E2C71922A5C400A1E0FC /* DUBaseLevelScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0610E2C61922A5C400A1E0FC /* DUBaseLevelScene.m */; };
-		0610E2C91922A5C500A1E0FC /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 0610E2C81922A5C400A1E0FC /* Spaceship.png */; };
 		0610E2CB1922A5C500A1E0FC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0610E2CA1922A5C500A1E0FC /* Images.xcassets */; };
 		0610E2D21922A5C500A1E0FC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0610E2D11922A5C500A1E0FC /* XCTest.framework */; };
 		0610E2D31922A5C500A1E0FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0610E2A81922A5C400A1E0FC /* Foundation.framework */; };
 		0610E2D41922A5C500A1E0FC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0610E2AC1922A5C400A1E0FC /* UIKit.framework */; };
 		0610E2DC1922A5C500A1E0FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0610E2DA1922A5C500A1E0FC /* InfoPlist.strings */; };
 		0610E2DE1922A5C500A1E0FC /* DiegoUnchainedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0610E2DD1922A5C500A1E0FC /* DiegoUnchainedTests.m */; };
+		8E1B46A519246A3700202550 /* DUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B46A419246A3700202550 /* DUAppDelegate.m */; };
+		8E1B46A819246A4500202550 /* DUBaseLevelScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B46A619246A4500202550 /* DUBaseLevelScene.m */; };
+		8E1B46AB19246A5100202550 /* DUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B46A919246A5100202550 /* DUViewController.m */; };
+		8E1B46AE19246AAD00202550 /* DUParallaxSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B46AD19246AAD00202550 /* DUParallaxSprite.m */; };
+		8EADACFB19297AE1006A9BD8 /* DUCharacterSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EADACFA19297AE1006A9BD8 /* DUCharacterSprite.m */; };
+		8EADACFE192983E9006A9BD8 /* DUDiegoSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EADACFD192983E9006A9BD8 /* DUDiegoSprite.m */; };
+		8EADAD06192996C4006A9BD8 /* DUTestLevelScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EADAD05192996C4006A9BD8 /* DUTestLevelScene.m */; };
+		8EFE27D019299E7E003984D7 /* placeholderImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 8EFE27CF19299E7E003984D7 /* placeholderImages.atlas */; };
 		DC74C72861D748758163EB0C /* libPods-DiegoUnchainedTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC1A5FFB4E04069B8A905CD /* libPods-DiegoUnchainedTests.a */; };
 /* End PBXBuildFile section */
 
@@ -48,15 +52,8 @@
 		0610E2B41922A5C400A1E0FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0610E2B61922A5C400A1E0FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0610E2B81922A5C400A1E0FC /* DiegoUnchained-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DiegoUnchained-Prefix.pch"; sourceTree = "<group>"; };
-		0610E2B91922A5C400A1E0FC /* DUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUAppDelegate.h; sourceTree = "<group>"; };
-		0610E2BA1922A5C400A1E0FC /* DUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DUAppDelegate.m; sourceTree = "<group>"; };
 		0610E2BD1922A5C400A1E0FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		0610E2C01922A5C400A1E0FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		0610E2C21922A5C400A1E0FC /* DUViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUViewController.h; sourceTree = "<group>"; };
-		0610E2C31922A5C400A1E0FC /* DUViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DUViewController.m; sourceTree = "<group>"; };
-		0610E2C51922A5C400A1E0FC /* DUBaseLevelScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUBaseLevelScene.h; sourceTree = "<group>"; };
-		0610E2C61922A5C400A1E0FC /* DUBaseLevelScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DUBaseLevelScene.m; sourceTree = "<group>"; };
-		0610E2C81922A5C400A1E0FC /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		0610E2CA1922A5C500A1E0FC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0610E2D01922A5C500A1E0FC /* DiegoUnchainedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiegoUnchainedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0610E2D11922A5C500A1E0FC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -65,6 +62,21 @@
 		0610E2DD1922A5C500A1E0FC /* DiegoUnchainedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiegoUnchainedTests.m; sourceTree = "<group>"; };
 		0BC1A5FFB4E04069B8A905CD /* libPods-DiegoUnchainedTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DiegoUnchainedTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5487ED18C4774C7B9FD6E8C0 /* Pods-DiegoUnchainedTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiegoUnchainedTests.xcconfig"; path = "Pods/Pods-DiegoUnchainedTests.xcconfig"; sourceTree = "<group>"; };
+		8E1B46A319246A3700202550 /* DUAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUAppDelegate.h; path = classes/delegate/DUAppDelegate.h; sourceTree = "<group>"; };
+		8E1B46A419246A3700202550 /* DUAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUAppDelegate.m; path = classes/delegate/DUAppDelegate.m; sourceTree = "<group>"; };
+		8E1B46A619246A4500202550 /* DUBaseLevelScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUBaseLevelScene.m; path = classes/scene/DUBaseLevelScene.m; sourceTree = "<group>"; };
+		8E1B46A719246A4500202550 /* DUBaseLevelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUBaseLevelScene.h; path = classes/scene/DUBaseLevelScene.h; sourceTree = "<group>"; };
+		8E1B46A919246A5100202550 /* DUViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUViewController.m; path = classes/viewController/DUViewController.m; sourceTree = "<group>"; };
+		8E1B46AA19246A5100202550 /* DUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUViewController.h; path = classes/viewController/DUViewController.h; sourceTree = "<group>"; };
+		8E1B46AC19246AAD00202550 /* DUParallaxSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUParallaxSprite.h; path = classes/sprite/DUParallaxSprite.h; sourceTree = "<group>"; };
+		8E1B46AD19246AAD00202550 /* DUParallaxSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUParallaxSprite.m; path = classes/sprite/DUParallaxSprite.m; sourceTree = "<group>"; };
+		8EADACF919297AE1006A9BD8 /* DUCharacterSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUCharacterSprite.h; path = classes/sprite/DUCharacterSprite.h; sourceTree = "<group>"; };
+		8EADACFA19297AE1006A9BD8 /* DUCharacterSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUCharacterSprite.m; path = classes/sprite/DUCharacterSprite.m; sourceTree = "<group>"; };
+		8EADACFC192983E9006A9BD8 /* DUDiegoSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUDiegoSprite.h; path = classes/sprite/DUDiegoSprite.h; sourceTree = "<group>"; };
+		8EADACFD192983E9006A9BD8 /* DUDiegoSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUDiegoSprite.m; path = classes/sprite/DUDiegoSprite.m; sourceTree = "<group>"; };
+		8EADAD04192996C4006A9BD8 /* DUTestLevelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUTestLevelScene.h; path = classes/scene/DUTestLevelScene.h; sourceTree = "<group>"; };
+		8EADAD05192996C4006A9BD8 /* DUTestLevelScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUTestLevelScene.m; path = classes/scene/DUTestLevelScene.m; sourceTree = "<group>"; };
+		8EFE27CF19299E7E003984D7 /* placeholderImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = placeholderImages.atlas; path = assets/images/placeholderImages.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,15 +141,12 @@
 		0610E2B01922A5C400A1E0FC /* DiegoUnchained */ = {
 			isa = PBXGroup;
 			children = (
-				0610E2B91922A5C400A1E0FC /* DUAppDelegate.h */,
-				0610E2BA1922A5C400A1E0FC /* DUAppDelegate.m */,
+				8E1B46A2192469B200202550 /* delegate */,
+				8E1B46A1192469AB00202550 /* scene */,
+				8E1B46A0192469A400202550 /* viewController */,
+				8E1B469F1924699D00202550 /* sprite */,
 				0610E2BC1922A5C400A1E0FC /* Main_iPhone.storyboard */,
 				0610E2BF1922A5C400A1E0FC /* Main_iPad.storyboard */,
-				0610E2C21922A5C400A1E0FC /* DUViewController.h */,
-				0610E2C31922A5C400A1E0FC /* DUViewController.m */,
-				0610E2C51922A5C400A1E0FC /* DUBaseLevelScene.h */,
-				0610E2C61922A5C400A1E0FC /* DUBaseLevelScene.m */,
-				0610E2C81922A5C400A1E0FC /* Spaceship.png */,
 				0610E2CA1922A5C500A1E0FC /* Images.xcassets */,
 				0610E2B11922A5C400A1E0FC /* Supporting Files */,
 			);
@@ -147,6 +156,7 @@
 		0610E2B11922A5C400A1E0FC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8EADACFF19298AEF006A9BD8 /* assets */,
 				0610E2B21922A5C400A1E0FC /* DiegoUnchained-Info.plist */,
 				0610E2B31922A5C400A1E0FC /* InfoPlist.strings */,
 				0610E2B61922A5C400A1E0FC /* main.m */,
@@ -171,6 +181,64 @@
 				0610E2DA1922A5C500A1E0FC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8E1B469F1924699D00202550 /* sprite */ = {
+			isa = PBXGroup;
+			children = (
+				8E1B46AC19246AAD00202550 /* DUParallaxSprite.h */,
+				8E1B46AD19246AAD00202550 /* DUParallaxSprite.m */,
+				8EADACF919297AE1006A9BD8 /* DUCharacterSprite.h */,
+				8EADACFA19297AE1006A9BD8 /* DUCharacterSprite.m */,
+				8EADACFC192983E9006A9BD8 /* DUDiegoSprite.h */,
+				8EADACFD192983E9006A9BD8 /* DUDiegoSprite.m */,
+			);
+			name = sprite;
+			sourceTree = "<group>";
+		};
+		8E1B46A0192469A400202550 /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				8E1B46A919246A5100202550 /* DUViewController.m */,
+				8E1B46AA19246A5100202550 /* DUViewController.h */,
+			);
+			name = viewController;
+			sourceTree = "<group>";
+		};
+		8E1B46A1192469AB00202550 /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				8E1B46A719246A4500202550 /* DUBaseLevelScene.h */,
+				8E1B46A619246A4500202550 /* DUBaseLevelScene.m */,
+				8EADAD04192996C4006A9BD8 /* DUTestLevelScene.h */,
+				8EADAD05192996C4006A9BD8 /* DUTestLevelScene.m */,
+			);
+			name = scene;
+			sourceTree = "<group>";
+		};
+		8E1B46A2192469B200202550 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				8E1B46A319246A3700202550 /* DUAppDelegate.h */,
+				8E1B46A419246A3700202550 /* DUAppDelegate.m */,
+			);
+			name = delegate;
+			sourceTree = "<group>";
+		};
+		8EADACFF19298AEF006A9BD8 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				8EADAD0019298B43006A9BD8 /* images */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		8EADAD0019298B43006A9BD8 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8EFE27CF19299E7E003984D7 /* placeholderImages.atlas */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,9 +320,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0610E2C91922A5C500A1E0FC /* Spaceship.png in Resources */,
 				0610E2CB1922A5C500A1E0FC /* Images.xcassets in Resources */,
 				0610E2C11922A5C400A1E0FC /* Main_iPad.storyboard in Resources */,
+				8EFE27D019299E7E003984D7 /* placeholderImages.atlas in Resources */,
 				0610E2BE1922A5C400A1E0FC /* Main_iPhone.storyboard in Resources */,
 				0610E2B51922A5C400A1E0FC /* InfoPlist.strings in Resources */,
 			);
@@ -309,9 +377,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0610E2B71922A5C400A1E0FC /* main.m in Sources */,
-				0610E2C41922A5C400A1E0FC /* DUViewController.m in Sources */,
-				0610E2BB1922A5C400A1E0FC /* DUAppDelegate.m in Sources */,
-				0610E2C71922A5C400A1E0FC /* DUBaseLevelScene.m in Sources */,
+				8E1B46AB19246A5100202550 /* DUViewController.m in Sources */,
+				8EADACFB19297AE1006A9BD8 /* DUCharacterSprite.m in Sources */,
+				8EADACFE192983E9006A9BD8 /* DUDiegoSprite.m in Sources */,
+				8EADAD06192996C4006A9BD8 /* DUTestLevelScene.m in Sources */,
+				8E1B46AE19246AAD00202550 /* DUParallaxSprite.m in Sources */,
+				8E1B46A519246A3700202550 /* DUAppDelegate.m in Sources */,
+				8E1B46A819246A4500202550 /* DUBaseLevelScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +521,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DiegoUnchained/DiegoUnchained-Prefix.pch";
 				INFOPLIST_FILE = "DiegoUnchained/DiegoUnchained-Info.plist";
+				New_Setting = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -463,6 +536,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DiegoUnchained/DiegoUnchained-Prefix.pch";
 				INFOPLIST_FILE = "DiegoUnchained/DiegoUnchained-Info.plist";
+				New_Setting = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;

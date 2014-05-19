@@ -8,6 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface DUParallaxSprite : SKNode
+@interface DUParallaxSprite : SKSpriteNode
 
 @end

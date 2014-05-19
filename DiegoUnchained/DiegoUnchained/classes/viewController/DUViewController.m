@@ -7,7 +7,7 @@
 //
 
 #import "DUViewController.h"
-#import "DUBaseLevelScene.h"
+#import "DUTestLevelScene.h"
 
 @implementation DUViewController
 
@@ -21,7 +21,7 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [DUBaseLevelScene sceneWithSize:skView.bounds.size];
+    SKScene * scene = [DUTestLevelScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
@@ -29,6 +29,11 @@
 }
 
 - (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+- (BOOL)prefersStatusBarHidden
 {
     return YES;
 }
