@@ -63,8 +63,13 @@
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     if (_diegoJumping) {
-        [_diego.physicsBody applyForce:CGVectorMake(0, 300)];
+        [self jumpPhysicsBody:_diego.physicsBody];
     }
 }
+
+-(void)jumpPhysicsBody:(SKPhysicsBody*)bodyToJump {
+    [bodyToJump applyForce:CGVectorMake(0, 300)];
+}
+
 
 @end
