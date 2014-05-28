@@ -17,6 +17,9 @@ const int SCROLL_SPEED = 5;
     SKSpriteNode *_ground;
     SKSpriteNode *_groundNext;
     
+    SKSpriteNode *_trees;
+    SKSpriteNode *_treesNext;
+    
     SKSpriteNode *_sky;
     SKSpriteNode *_skyNext;
     
@@ -53,6 +56,16 @@ const int SCROLL_SPEED = 5;
         [self addChild:_sky atWorldLayer:DUWorldLayerMidGround];
         [self addChild:_skyNext atWorldLayer:DUWorldLayerMidGround];
         
+        _trees = [[SKSpriteNode alloc] initWithImageNamed:@"grass-and-trees.png"];
+        _trees.name = @"trees";
+        _trees.position = CGPointMake(0, 139);
+        
+        _treesNext = [_trees copy];
+        _treesNext.position = CGPointMake(_trees.frame.size.width, 139);
+        
+        [self addChild:_trees atWorldLayer:DUWorldLayerMidGround];
+        [self addChild:_treesNext atWorldLayer:DUWorldLayerMidGround];
+        
         //_diego = [[DUDiegoSprite alloc] initAtPosition:CGPointMake(CGRectGetMidX(self.frame) - 100, CGRectGetMidY(self.frame))];
         _diego = [[SKSpriteNode alloc] initWithImageNamed:@"diego_small.png"];
         _diego.anchorPoint = CGPointMake(0, 0);
@@ -86,6 +99,7 @@ const int SCROLL_SPEED = 5;
 {
     [self moveByX:_ground withNode:_groundNext withSpeed:5];
     [self moveByX:_sky withNode:_skyNext withSpeed:1];
+    [self moveByX:_trees withNode:_treesNext withSpeed:2.5];
 
 }
 
