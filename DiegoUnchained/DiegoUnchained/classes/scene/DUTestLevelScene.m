@@ -9,10 +9,16 @@
 #import "DUTestLevelScene.h"
 #import "DUDiegoSprite.h"
 
+const int SCROLL_SPEED = 5;
+
 @implementation DUTestLevelScene {
-    DUDiegoSprite *_diego;
+    //DUDiegoSprite *_diego;
+    SKSpriteNode *_diego;
     SKSpriteNode *_ground;
-    SKNode *_cieling;
+    SKSpriteNode *_groundNext;
+    
+    SKSpriteNode *_sky;
+    SKSpriteNode *_skyNext;
     
     BOOL _diegoJumping;
 }
@@ -21,29 +27,45 @@
 {
     self = [super initWithSize:size];
     if (self) {
-        self.backgroundColor = [UIColor blueColor];
+        NSLog(@"SIZE: %@", NSStringFromCGSize(size));
+        self.backgroundColor = [SKColor colorWithRed:0 green:.6 blue:.9 alpha:1.0];
         self.physicsWorld.gravity = CGVectorMake(0, -3.0);
         
-        _diego = [[DUDiegoSprite alloc] initAtPosition:CGPointMake(CGRectGetMidX(self.frame) - 300, CGRectGetMidY(self.frame) - 160)];
-        _diego.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_diego.frame.size];
-        [self addChild:_diego atWorldLayer:DUWorldLayerMidGround];
-        
-        /*
-         * TODO: add cieling to keep diego from flying away
-        _cieling = [[SKNode alloc] init];
-        _cieling.position = CGPointMake(100, 0);
-        _cieling.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(size.width, 100)];
-        [self addChild:_cieling atWorldLayer:DUWorldLayerMidGround];
-        */
-        
-        _ground = [[SKSpriteNode alloc] initWithImageNamed:@"ground.png"];
+        _ground = [[SKSpriteNode alloc] initWithImageNamed:@"grass-ground.png"];
         _ground.name = @"ground";
-        _ground.anchorPoint = CGPointZero;
-        _ground.position = CGPointMake(0, _ground.frame.size.height + 40);
-        
-        _ground.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_ground.frame.size];
+        _ground.anchorPoint = CGPointMake(0,0);
+        _ground.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(_ground.frame.origin.x, _ground.frame.origin.y, _ground.frame.size.width, _ground.frame.size.height-20)];
         _ground.physicsBody.dynamic = NO;
+        
+        _groundNext = [_ground copy];
+        _groundNext.position = CGPointMake(_ground.frame.size.width, 0);
+        
         [self addChild:_ground atWorldLayer:DUWorldLayerMidGround];
+        [self addChild:_groundNext atWorldLayer:DUWorldLayerMidGround];
+        
+        _sky = [[SKSpriteNode alloc] initWithImageNamed:@"sky.png"];
+        _sky.name = @"sky";
+        _sky.position = CGPointMake(0, 200);
+        
+        _skyNext = [_sky copy];
+        _skyNext.position = CGPointMake(_sky.frame.size.width, 200);
+        
+        [self addChild:_sky atWorldLayer:DUWorldLayerMidGround];
+        [self addChild:_skyNext atWorldLayer:DUWorldLayerMidGround];
+        
+        //_diego = [[DUDiegoSprite alloc] initAtPosition:CGPointMake(CGRectGetMidX(self.frame) - 100, CGRectGetMidY(self.frame))];
+        _diego = [[SKSpriteNode alloc] initWithImageNamed:@"diego_small.png"];
+        _diego.anchorPoint = CGPointMake(0, 0);
+        _diego.position    = CGPointMake(CGRectGetMidX(self.frame) - 100, CGRectGetMidY(self.frame));
+        _diego.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_diego.frame.size];
+        _diego.physicsBody.allowsRotation = NO;
+        [self addChild:_diego atWorldLayer:DUWorldLayerMidGround];
+
+        CGPoint ceilingPointBegin = CGPointMake(0, size.height);
+        CGPoint ceilingPointEnd   = CGPointMake(size.width, size.height);
+        SKNode* ceilingNode     = [[SKNode alloc] init];
+        ceilingNode.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:ceilingPointBegin toPoint:ceilingPointEnd];
+        [self addChild:ceilingNode];
         
         _diegoJumping = NO;
     }
@@ -60,15 +82,39 @@
     _diegoJumping = NO;
 }
 
+-(void)parallaxUpdate
+{
+    [self moveByX:_ground withNode:_groundNext withSpeed:5];
+    [self moveByX:_sky withNode:_skyNext withSpeed:1];
+
+}
+
+-(void)moveByX:(SKNode *)node withNode:(SKNode *)nodeNext withSpeed:(float)speed
+{
+    node.position = CGPointMake(node.position.x - speed, node.position.y);
+    nodeNext.position = CGPointMake(nodeNext.position.x - speed, nodeNext.position.y);
+    
+    //if (node.position.x + node.frame.size.width <= 0) {
+    if (CGRectGetMaxX(node.frame) < CGRectGetMinX(self.frame)) {
+        node.position = CGPointMake(node.position.x + (node.frame.size.width * 2), node.position.y);
+    }
+    
+    if (CGRectGetMaxX(nodeNext.frame) < CGRectGetMinX(self.frame)) {
+        nodeNext.position = CGPointMake(nodeNext.position.x + (nodeNext.frame.size.width * 2), nodeNext.position.y);
+    }
+}
+
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     if (_diegoJumping) {
         [self jumpPhysicsBody:_diego.physicsBody];
     }
+    
+    [self parallaxUpdate];
 }
 
 -(void)jumpPhysicsBody:(SKPhysicsBody*)bodyToJump {
-    [bodyToJump applyForce:CGVectorMake(0, 300)];
+    [bodyToJump applyForce:CGVectorMake(0, 100)];
 }
 
 
