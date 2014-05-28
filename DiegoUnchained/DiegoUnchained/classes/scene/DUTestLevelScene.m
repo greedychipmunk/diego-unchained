@@ -12,8 +12,8 @@
 const int SCROLL_SPEED = 5;
 
 @implementation DUTestLevelScene {
-    //DUDiegoSprite *_diego;
-    SKSpriteNode *_diego;
+    DUDiegoSprite *_diego;
+    
     SKSpriteNode *_ground;
     SKSpriteNode *_groundNext;
     
@@ -22,6 +22,8 @@ const int SCROLL_SPEED = 5;
     
     SKSpriteNode *_sky;
     SKSpriteNode *_skyNext;
+    
+    SKTextureAtlas *_atlas;
     
     BOOL _diegoJumping;
 }
@@ -34,7 +36,9 @@ const int SCROLL_SPEED = 5;
         self.backgroundColor = [SKColor colorWithRed:0 green:.6 blue:.9 alpha:1.0];
         self.physicsWorld.gravity = CGVectorMake(0, -3.0);
         
-        _ground = [[SKSpriteNode alloc] initWithImageNamed:@"grass-ground.png"];
+        _atlas = [SKTextureAtlas atlasNamed:@"placeholderImages"];
+        
+        _ground = [[SKSpriteNode alloc] initWithTexture:[_atlas textureNamed:@"grass-ground"]];
         _ground.name = @"ground";
         _ground.anchorPoint = CGPointMake(0,0);
         _ground.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(_ground.frame.origin.x, _ground.frame.origin.y, _ground.frame.size.width, _ground.frame.size.height-20)];
@@ -46,7 +50,7 @@ const int SCROLL_SPEED = 5;
         [self addChild:_ground atWorldLayer:DUWorldLayerMidGround];
         [self addChild:_groundNext atWorldLayer:DUWorldLayerMidGround];
         
-        _sky = [[SKSpriteNode alloc] initWithImageNamed:@"sky.png"];
+        _sky = [[SKSpriteNode alloc] initWithTexture:[_atlas textureNamed:@"sky"]];
         _sky.name = @"sky";
         _sky.position = CGPointMake(0, 200);
         
@@ -56,7 +60,7 @@ const int SCROLL_SPEED = 5;
         [self addChild:_sky atWorldLayer:DUWorldLayerMidGround];
         [self addChild:_skyNext atWorldLayer:DUWorldLayerMidGround];
         
-        _trees = [[SKSpriteNode alloc] initWithImageNamed:@"grass-and-trees.png"];
+        _trees = [[SKSpriteNode alloc] initWithTexture:[_atlas textureNamed:@"grass-and-trees"]];
         _trees.name = @"trees";
         _trees.position = CGPointMake(0, 139);
         
@@ -66,12 +70,7 @@ const int SCROLL_SPEED = 5;
         [self addChild:_trees atWorldLayer:DUWorldLayerMidGround];
         [self addChild:_treesNext atWorldLayer:DUWorldLayerMidGround];
         
-        //_diego = [[DUDiegoSprite alloc] initAtPosition:CGPointMake(CGRectGetMidX(self.frame) - 100, CGRectGetMidY(self.frame))];
-        _diego = [[SKSpriteNode alloc] initWithImageNamed:@"diego_small.png"];
-        _diego.anchorPoint = CGPointMake(0, 0);
-        _diego.position    = CGPointMake(CGRectGetMidX(self.frame) - 100, CGRectGetMidY(self.frame));
-        _diego.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_diego.frame.size];
-        _diego.physicsBody.allowsRotation = NO;
+        _diego = [[DUDiegoSprite alloc] initAtPosition:CGPointMake(CGRectGetMidX(self.frame) - 100, CGRectGetMidY(self.frame))];
         [self addChild:_diego atWorldLayer:DUWorldLayerMidGround];
 
         CGPoint ceilingPointBegin = CGPointMake(0, size.height);
@@ -97,18 +96,17 @@ const int SCROLL_SPEED = 5;
 
 -(void)parallaxUpdate
 {
-    [self moveByX:_ground withNode:_groundNext withSpeed:5];
-    [self moveByX:_sky withNode:_skyNext withSpeed:1];
-    [self moveByX:_trees withNode:_treesNext withSpeed:2.5];
+    [self moveSprite:_ground withSprite:_groundNext withSpeed:5];
+    [self moveSprite:_sky withSprite:_skyNext withSpeed:1];
+    [self moveSprite:_trees withSprite:_treesNext withSpeed:2.5];
 
 }
 
--(void)moveByX:(SKNode *)node withNode:(SKNode *)nodeNext withSpeed:(float)speed
+-(void)moveSprite:(SKNode *)node withSprite:(SKNode *)nodeNext withSpeed:(float)speed
 {
     node.position = CGPointMake(node.position.x - speed, node.position.y);
     nodeNext.position = CGPointMake(nodeNext.position.x - speed, nodeNext.position.y);
     
-    //if (node.position.x + node.frame.size.width <= 0) {
     if (CGRectGetMaxX(node.frame) < CGRectGetMinX(self.frame)) {
         node.position = CGPointMake(node.position.x + (node.frame.size.width * 2), node.position.y);
     }
