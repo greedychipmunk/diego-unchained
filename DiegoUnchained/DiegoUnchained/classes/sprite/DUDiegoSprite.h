@@ -11,5 +11,7 @@
 @interface DUDiegoSprite : DUCharacterSprite
 
 - (instancetype)initAtPosition:(CGPoint)position;
+- (void)run;
+- (void)jump;
 
 @end

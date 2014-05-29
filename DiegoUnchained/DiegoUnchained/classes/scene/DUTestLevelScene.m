@@ -41,7 +41,7 @@ const int SCROLL_SPEED = 5;
         _ground = [[SKSpriteNode alloc] initWithTexture:[_atlas textureNamed:@"grass-ground"]];
         _ground.name = @"ground";
         _ground.anchorPoint = CGPointMake(0,0);
-        _ground.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(_ground.frame.origin.x, _ground.frame.origin.y, _ground.frame.size.width, _ground.frame.size.height-20)];
+        _ground.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(_ground.frame.origin.x, _ground.frame.origin.y, _ground.frame.size.width, _ground.frame.size.height-25)];
         _ground.physicsBody.dynamic = NO;
         
         _groundNext = [_ground copy];
@@ -80,6 +80,7 @@ const int SCROLL_SPEED = 5;
         [self addChild:ceilingNode];
         
         _diegoJumping = NO;
+        [_diego run];
     }
     return self;
 }
@@ -119,14 +120,10 @@ const int SCROLL_SPEED = 5;
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     if (_diegoJumping) {
-        [self jumpPhysicsBody:_diego.physicsBody];
+        [_diego jump];
     }
     
     [self parallaxUpdate];
-}
-
--(void)jumpPhysicsBody:(SKPhysicsBody*)bodyToJump {
-    [bodyToJump applyForce:CGVectorMake(0, 100)];
 }
 
 
